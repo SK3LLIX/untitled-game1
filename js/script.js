@@ -3,57 +3,6 @@
     draw();
     window.requestAnimationFrame = requestAnimationFrame;
 })();
-let aleck = new Image();
-aleck.onload = function() {
-   context.drawImage(aleck, 10, 30, 1000, 1000,);
-};
-let entity = 
-{
-    "player":{
-        "src":"file:///media/fuse/drivefs-069babc0a8531bc79fe60bdb73dcc6a3/root/Random%20Folders%20Folder/Phone%20Link/aleck%20sprites/aleck-right.png",
-        "frameHeight":250,
-        "globalWidth":0,
-        "globalHeight":0,
-        "frameWidth":250,
-        "frameHeight":250,
-        "currentFrame":0,
-        "aproxFrame":0,
-        "maxRows":6,
-        "maxColumns":10,
-        "minRows":0,
-        "minColumns":0,
-        "row":0,
-        "column":0,
-        "anim":"idle",
-        "direction":"right",
-        "xPos":10,
-        "yPos":750,
-        "xVel":0,
-        "yVel":0,
-        "isAirtime":false,
-        "hp":3
-    },
-    "anne":{
-        "src":"https://sk3llix.github.io/test/assets/images/spritesheets/anne-right.png",
-        "frameHeight":250,
-        "globalWidth":0,
-        "globalHeight":0,
-        "frameWidth":250,
-        "frameHeight":250,
-        "currentFrame":0,
-        "maxRows":6,
-        "maxColumns":10,
-        "minRows":0,
-        "minColumns":0,
-        "row":0,
-        "column":0,
-        "anim":0,
-        "xPos":10,
-        "yPos":30,
-        "isAirtime":false,
-        "hp":3
-    }
-};
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = 1000,
@@ -362,9 +311,4 @@ window.addEventListener("load", function () {
     update();
 });
 function draw(){
-    entity.player.xPos = player.x
-    entity.player.yPos = player.y
-    entity.player.row = Math.floor(Math.round(entity.player.currentFrame) / entity.player.maxColumns);
-    entity.player.column = Math.round(entity.player.currentFrame) % entity.player.maxColumns;
-    }
 };
