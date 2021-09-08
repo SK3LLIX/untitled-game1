@@ -362,42 +362,9 @@ window.addEventListener("load", function () {
     update();
 });
 function draw(){
+    entity.player.xPos = player.x
+    entity.player.yPos = player.y
     entity.player.row = Math.floor(Math.round(entity.player.currentFrame) / entity.player.maxColumns);
     entity.player.column = Math.round(entity.player.currentFrame) % entity.player.maxColumns;
-    if (entity.player.anim === 'idle'){
-        entity.player.xVel = 0;
-        entity.player.yVel = 0;
-    }
-    if (entity.player.anim === 'walk'){
-        if(entity.player.direction === 'right'){
-            entity.player.xVel = 6;
-        }
-        if(entity.player.direction === 'left'){
-            entity.player.xVel = -6;
-        }
-    }
-    if(entity.player.anim == 'jump'){
-        if(entity.player.aproxFrame == 16){
-            entity.player.anim = 'airtime';
-        }
-        entity.player.yVel = 16;
-        entity.player.isAirtime = true;
-        if(entity.player.yVel == 16){
-            entity.player.anim = 'jump1';
-        }
-    }
-    if(entity.player.anim == 'airtime'){
-        if(entity.player.aproxFrame <= 14 || entity.player.aproxFrame >= 17){
-            entity.player.currentFrame = 15;
-        }
-
-    }
-    if(entity.player.isAirtime == true){
-        entity.player.yVel = entity.player.yVel - gravity;
-    }
-    if(entity.player.yPos > 750){
-        entity.player.yPos = 750;
-        entity.player.yVel = 0;
-        entity.player.isAirtime = false;
     }
 };
