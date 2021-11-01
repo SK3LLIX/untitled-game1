@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "reborn:dreadwood",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:loot": "loot_tables/blocks/reborn_dreadwood.json",
+      "minecraft:destroy_time": 2.0,
+      "minecraft:friction": 0.6,
+      "minecraft:map_color": "#140801",
+      "minecraft:explosion_resistance": 1.0,
+      "minecraft:block_light_absorption": 7.0,
+      "minecraft:block_light_emission": 0.0,
+      "minecraft:geometry": "geometry.block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "reborn_dreadwood",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:creative_category": {
+        "category": "nature",
+        "group": "itemGroup.name.wood"
+      },
+      "minecraft:on_placed": {
+        "event": "size:block",
+        "target": "self"
+      },
+      "minecraft:on_player_destroyed": {
+        "event": "remove:block",
+        "target": "self"
+      }
+    },
+    "events": {
+      "size:block": {
+        "run_command": {
+          "command": []
+        }
+      },
+      "remove:block": {
+        "run_command": {
+          "command": []
+        }
+      }
+    }
+  }
+}
